@@ -102,6 +102,7 @@ if( parsedUrl.protocol == 'file:' ) {
     .use( Decompress.targz(decompressOptions) )
     .run( cb );
 } else {
+  console.log(url);
   download(url, dest, merge({ extract: true }, decompressOptions))
     .then(function() {cb();})
     .catch(function(e) {cb(e);});
